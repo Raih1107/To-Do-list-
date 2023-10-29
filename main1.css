@@ -1,0 +1,320 @@
+/* Variables */
+:root {
+	--primary: #40ead9;
+	--business: #47ce7f;
+	--personal: var(--primary);
+	--light: #2f12be;
+	--grey: #23b0ac;
+	--dark: #ff2200;
+	--danger: #ea4f07;
+
+	--shadow: 0 1px 3px rgba(0, 0, 0, 0.472);
+
+	--business-glow: 0px 0px 4px rgba(56, 151, 89, 0.729);
+	--personal-glow: 0px 0px 4px rgba(234, 64, 164, 0.75);
+}
+/* End of Variables */
+
+/* Resets */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'montserrat', sans-serif;
+}
+
+input:not([type="radio"]):not([type="checkbox"]), button {
+	appearance: none;
+	border: none;
+	outline: none;
+	background: none;
+	cursor: initial;
+}
+/* End of Resets */
+
+body {
+	background: var(--light);
+	color: var(--dark);
+}
+
+section {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+}
+
+h3 {
+	color: var(--dark);
+	font-size: 1rem;
+	font-weight: 400;
+	margin-bottom: 0.5rem;
+}
+
+h4 {
+	color: var(--grey);
+	font-size: 0.875rem;
+	font-weight: 700;
+	margin-bottom: 0.5rem;
+}
+
+.greeting .title {
+	display: flex;
+}
+
+.greeting .title input {
+	margin-left: 0.5rem;
+	flex: 1 1 0%;
+	min-width: 0;
+}
+
+.greeting .title, 
+.greeting .title input {
+	color: var(--dark);
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+.create-todo input[type="text"] {
+	display: block;
+	width: 100%;
+	font-size: 1.125rem;
+	padding: 1rem 1.5rem;
+	color: var(--dark);
+	background-color: #FFF;
+	border-radius: 0.5rem;
+	box-shadow: var(--shadow);
+	margin-bottom: 1.5rem;
+}
+
+.create-todo .options {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 1rem;
+	margin-bottom: 1.5rem;
+}
+
+.create-todo .options label {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #FFF;
+	padding: 1.5rem;
+	box-shadow: var(--shadow);
+	border-radius: 0.5rem;
+	cursor: pointer;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	display: none;
+}
+
+.bubble {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 20px;
+	height: 20px;
+	border-radius: 999px;
+	border: 2px solid var(--business);
+	box-shadow: var(--business-glow);
+}
+
+.bubble.personal {
+	border-color: var(--personal);
+	box-shadow: var(--personal-glow);
+}
+
+.bubble::after {
+	content: '';
+	display: block;
+	opacity: 0;
+	width: 0px;
+	height: 0px;
+	background-color: var(--business);
+	box-shadow: var(--business-glow);
+	border-radius: 999px;
+	transition: 0.2s ease-in-out;
+}
+
+.bubble.personal::after {
+	background-color: var(--personal);
+	box-shadow: var(--personal-glow);
+}
+
+input:checked ~ .bubble::after {
+	width: 10px;
+	height: 10px;
+	opacity: 1;
+}
+
+.create-todo .options label div {
+	color: var(--dark);
+	font-size: 1.125rem;
+	margin-top: 1rem;
+}
+
+.create-todo input[type="submit"] {
+	display: block;
+	width: 100%;
+	font-size: 1.125rem;
+	padding: 1rem 1.5rem;
+	color: #FFF;
+	font-weight: 700;
+	text-transform: uppercase;
+	background-color: var(--primary);
+	box-shadow: var(--personal-glow);
+	border-radius: 0.5rem;
+	cursor: pointer;
+	transition: 0.2s ease-out;
+}
+
+.create-todo input[type="submit"]:hover {
+	opacity: 0.75;
+}
+
+.todo-list .list {
+	margin: 1rem 0;
+}
+
+.todo-list .todo-item {
+	display: flex;
+	align-items: center;
+	background-color: #FFF;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	box-shadow: var(--shadow);
+	margin-bottom: 1rem;
+}
+
+.todo-item label {
+	display: block;
+	margin-right: 1rem;
+	cursor: pointer;
+}
+
+.todo-item .todo-content {
+	flex: 1 1 0%;
+}
+
+.todo-item .todo-content input {
+	color: var(--dark);
+	font-size: 1.125rem;
+}
+
+.todo-item .actions {
+	display: flex;
+	align-items: center;
+}
+
+.todo-item .actions button {
+	display: block;
+	padding: 0.5rem;
+	border-radius: 0.25rem;
+	color: #FFF;
+	cursor: pointer;
+	transition: 0.2s ease-in-out;
+}
+
+.todo-item .actions button:hover {
+	opacity: 0.75;
+}
+
+.todo-item .actions .edit {
+	margin-right: 0.5rem;
+	background-color: var(--primary);
+}
+
+.todo-item .actions .delete {
+	background-color: var(--danger);
+}
+
+.todo-item.done .todo-content input {
+	text-decoration: line-through;
+	color: var(--grey);
+}
+
+
+/* Default styles for desktop */
+
+/* Your existing CSS code */
+
+/* Media query for screens with a maximum width of 768px (typical for mobile devices) */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Adjust the font size for better readability on smaller screens */
+    }
+
+    h3 {
+        font-size: 0.875rem; /* Reduce heading font size for mobile */
+    }
+
+    h4 {
+        font-size: 0.75rem; /* Reduce sub-heading font size for mobile */
+    }
+    .greeting .title{
+		font-size: 1.2rem;
+	}
+    .greeting .title input {
+		font-size: 1.3rem;
+        margin-left: 0.25rem; /* Reduce space between title and input field */
+    }
+
+    .create-todo input[type="text"] {
+        font-size: 1rem; /* Slightly reduce the font size of text inputs */
+    }
+
+    .create-todo .options {
+		
+        grid-template-columns: 1fr 1fr; /* Display options as a single column on smaller screens */
+        grid-gap: 0.5rem; /* Reduce gap between options */
+    }
+
+    .create-todo .options label {
+        padding: 1rem; /* Increase padding for better touch interaction */
+    }
+
+    .bubble {
+        width: 16px;
+        height: 16px;
+        /* Adjust other styles for smaller bubble size */
+    }
+
+    .bubble::after {
+        width: 8px; /* Reduce bubble::after size */
+        height: 8px;
+    }
+
+    .create-todo input[type="submit"] {
+        font-size: 1rem; /* Slightly reduce font size for submit button */
+    }
+
+    .todo-list .todo-item {
+        flex-direction: row; /* Stack todo items vertically on mobile */
+        padding: 0.5rem; /* Reduce padding for todo items */
+    }
+
+    .todo-item label {
+        margin-right: 1rem; /* Remove margin between label and todo content */
+    }
+
+    .todo-item .todo-content input {
+        font-size: 1rem; /* Slightly reduce font size for todo content input */
+    }
+
+    .todo-item .actions {
+        flex-direction: row; /* Keep edit and delete buttons in a row on mobile */
+
+    }
+
+    .todo-item .actions button {
+        padding: 0.5rem; /* Reduce button padding for mobile */
+    }
+
+    .todo-item.done .todo-content input {
+        text-decoration: line-through;
+        font-size: 0.875rem; /* Slightly reduce font size for completed todo content */
+    }
+}
