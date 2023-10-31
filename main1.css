@@ -1,16 +1,16 @@
 /* Variables */
 :root {
-	--primary: #40ead9;
-	--business: #47ce7f;
+	--primary: #EA40A4;
+	--business: #3a82ee;
 	--personal: var(--primary);
-	--light: #2f12be;
-	--grey: #23b0ac;
-	--dark: #ff2200;
-	--danger: #ea4f07;
+	--light: #EEE;
+	--grey: #888;
+	--dark: #313154;
+	--danger: #ff5b57;
 
-	--shadow: 0 1px 3px rgba(0, 0, 0, 0.472);
+	--shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 
-	--business-glow: 0px 0px 4px rgba(56, 151, 89, 0.729);
+	--business-glow: 0px 0px 4px rgba(58, 130, 238, 0.75);
 	--personal-glow: 0px 0px 4px rgba(234, 64, 164, 0.75);
 }
 /* End of Variables */
