@@ -3,9 +3,9 @@
 	--primary: #EA40A4;
 	--business: #3a82ee;
 	--personal: var(--primary);
-	--light: #EEE;
-	--grey: #888;
-	--dark: #313154;
+	--light: #374151;
+	--grey: black;
+	--dark: black;
 	--danger: #ff5b57;
 
 	--shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -80,8 +80,8 @@ h4 {
 	width: 100%;
 	font-size: 1.125rem;
 	padding: 1rem 1.5rem;
-	color: var(--dark);
-	background-color: #FFF;
+	color: rgb(115, 114, 114);
+	background-color: #1F2937;
 	border-radius: 0.5rem;
 	box-shadow: var(--shadow);
 	margin-bottom: 1.5rem;
@@ -99,7 +99,7 @@ h4 {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-color: #FFF;
+	background-color: rgb(88, 80, 137);
 	padding: 1.5rem;
 	box-shadow: var(--shadow);
 	border-radius: 0.5rem;
@@ -151,7 +151,8 @@ input:checked ~ .bubble::after {
 }
 
 .create-todo .options label div {
-	color: var(--dark);
+	color: black;
+	font-weight: 600;
 	font-size: 1.125rem;
 	margin-top: 1rem;
 }
@@ -182,7 +183,7 @@ input:checked ~ .bubble::after {
 .todo-list .todo-item {
 	display: flex;
 	align-items: center;
-	background-color: #FFF;
+	background-color: black;
 	padding: 1rem;
 	border-radius: 0.5rem;
 	box-shadow: var(--shadow);
@@ -200,7 +201,7 @@ input:checked ~ .bubble::after {
 }
 
 .todo-item .todo-content input {
-	color: var(--dark);
+	color: white;
 	font-size: 1.125rem;
 }
 
@@ -233,7 +234,7 @@ input:checked ~ .bubble::after {
 
 .todo-item.done .todo-content input {
 	text-decoration: line-through;
-	color: var(--grey);
+	color: #FFF;
 }
 
 
@@ -296,20 +297,23 @@ input:checked ~ .bubble::after {
         flex-direction: row; 
 		justify-content: space-around;/* Stack todo items vertically on mobile */
         padding: 1rem; /* Reduce padding for todo items */
+
     }
 
     .todo-item label {
-        margin-right: 1rem; /* Remove margin between label and todo content */
+        margin-right: 0.3rem;
+
     }
 
     .todo-item .todo-content input {
-        font-size: 1rem; /* Slightly reduce font size for todo content input */
+        font-size: 0.7rem; /* Slightly reduce font size for todo content input */
 		margin-right: -10rem;
+		
     }
 
     .todo-item .actions {
         flex-direction: row; /* Keep edit and delete buttons in a row on mobile */
-        
+
     }
 
     .todo-item .actions button {
@@ -319,6 +323,6 @@ input:checked ~ .bubble::after {
 
     .todo-item.done .todo-content input {
         text-decoration: line-through;
-        font-size: 0.875rem; /* Slightly reduce font size for completed todo content */
+        font-size: 0.5rem; /* Slightly reduce font size for completed todo content */
     }
 }
