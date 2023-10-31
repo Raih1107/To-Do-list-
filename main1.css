@@ -265,9 +265,10 @@ input:checked ~ .bubble::after {
     .create-todo input[type="text"] {
         font-size: 1rem; /* Slightly reduce the font size of text inputs */
     }
+    
 
     .create-todo .options {
-		
+
         grid-template-columns: 1fr 1fr; /* Display options as a single column on smaller screens */
         grid-gap: 0.5rem; /* Reduce gap between options */
     }
@@ -294,7 +295,7 @@ input:checked ~ .bubble::after {
     .todo-list .todo-item {
         flex-direction: row; 
 		justify-content: space-around;/* Stack todo items vertically on mobile */
-        padding: 0.5rem; /* Reduce padding for todo items */
+        padding: 1rem; /* Reduce padding for todo items */
     }
 
     .todo-item label {
@@ -303,15 +304,17 @@ input:checked ~ .bubble::after {
 
     .todo-item .todo-content input {
         font-size: 1rem; /* Slightly reduce font size for todo content input */
+		margin-right: -4rem;
     }
 
     .todo-item .actions {
         flex-direction: row; /* Keep edit and delete buttons in a row on mobile */
-
+        
     }
 
     .todo-item .actions button {
         padding: 0.25rem; /* Reduce button padding for mobile */
+        
     }
 
     .todo-item.done .todo-content input {
