@@ -304,7 +304,7 @@ input:checked ~ .bubble::after {
 
     .todo-item .todo-content input {
         font-size: 1rem; /* Slightly reduce font size for todo content input */
-		margin-right: -4rem;
+		margin-right: -10rem;
     }
 
     .todo-item .actions {
