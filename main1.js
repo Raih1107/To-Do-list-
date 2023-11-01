@@ -13,10 +13,15 @@ window.addEventListener('load', () => {
 
 	newTodoForm.addEventListener('submit', e => {
 		e.preventDefault();
+		const contentValue = e.target.elements.content.value;
+		const categoryValue = e.target.elements.category.value;
+		if(contentValue ==="" && categoryValue ===""){
+			return alert("Please enter todo first")
+		}
 
 		const todo = {
-			content: e.target.elements.content.value,
-			category: e.target.elements.category.value,
+			content: contentValue,
+			category:categoryValue,
 			done: false,
 			createdAt: new Date().getTime()
 		}
