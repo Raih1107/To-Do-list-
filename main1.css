@@ -3,10 +3,10 @@
 	--primary: #EA40A4;
 	--business: #3a82ee;
 	--personal: var(--primary);
-	--light: #374151;
-	--grey: black;
-	--dark: black;
-	--danger: #ff5b57;
+	--light: #132645;
+	--grey: rgb(183, 183, 183);
+	--dark: rgb(203, 201, 201);
+	--danger: #fb0a06;
 
 	--shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 
@@ -99,10 +99,10 @@ h4 {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-color: rgb(88, 80, 137);
-	padding: 1.5rem;
+	background-color: #0e1b31;
+	padding: 2rem;
 	box-shadow: var(--shadow);
-	border-radius: 0.5rem;
+	border-radius: 0.5rem ;
 	cursor: pointer;
 }
 
@@ -111,6 +111,9 @@ input[type="checkbox"] {
 	display: none;
 }
 
+.options .bubble{
+	display: none;
+}
 .bubble {
 	display: flex;
 	align-items: center;
@@ -151,10 +154,10 @@ input:checked ~ .bubble::after {
 }
 
 .create-todo .options label div {
-	color: black;
-	font-weight: 600;
+	color: rgb(236, 236, 236);
+	font-weight: 500;
 	font-size: 1.125rem;
-	margin-top: 1rem;
+	margin-top: 0;
 }
 
 .create-todo input[type="submit"] {
@@ -162,16 +165,27 @@ input:checked ~ .bubble::after {
 	width: 100%;
 	font-size: 1.125rem;
 	padding: 1rem 1.5rem;
-	color: #FFF;
+	color: #eae9e9;
 	font-weight: 700;
 	text-transform: uppercase;
-	background-color: var(--primary);
+	background-color: rgb(255, 3, 121);
 	box-shadow: var(--personal-glow);
 	border-radius: 0.5rem;
 	cursor: pointer;
 	transition: 0.2s ease-out;
 }
+.options label:hover{
+	background-color: #10396e;
+	transition: 0.2s ease-in-out;
 
+}
+.options label:active {
+	background-color:#020202 ;
+	border: 0.1rem solid #cbcbcb;
+	transition: 0.2s ease-in-out;
+
+
+}
 .create-todo input[type="submit"]:hover {
 	opacity: 0.75;
 }
@@ -225,7 +239,7 @@ input:checked ~ .bubble::after {
 
 .todo-item .actions .edit {
 	margin-right: 0.5rem;
-	background-color: var(--primary);
+	background-color: rgb(39, 39, 69);
 }
 
 .todo-item .actions .delete {
@@ -234,7 +248,7 @@ input:checked ~ .bubble::after {
 
 .todo-item.done .todo-content input {
 	text-decoration: line-through;
-	color: #FFF;
+	color: #ebe7e7;
 }
 
 
