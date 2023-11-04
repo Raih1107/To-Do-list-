@@ -13,16 +13,34 @@ window.addEventListener('load', () => {
 
 	newTodoForm.addEventListener('submit', e => {
 		e.preventDefault();
+		const contentValue = e.target.elements.content.value;
+		const categoryValue = e.target.elements.category.value;
+		if(!contentValue || !categoryValue){
+		return Toastify({
+				text: "Please enter todo first",
+				duration: 3000,
+				gravity: "top", 
+				position: "center",
+				style: {
+					background: "linear-gradient(90deg, rgba(255,109,8,1) 0%, rgba(255,181,0,1) 100%)"
+				  }
+				}).showToast();
+		}
 
 		const todo = {
-			content: e.target.elements.content.value,
-			category: e.target.elements.category.value,
+			content: contentValue,
+			category:categoryValue,
 			done: false,
 			createdAt: new Date().getTime()
 		}
 
 		todos.push(todo);
-
+		Toastify({
+			text: "Todo Added",
+			duration: 3000,
+			gravity: "top", 
+			position: "center",
+			}).showToast();
 		localStorage.setItem('todos', JSON.stringify(todos));
 
 		// Reset the form
@@ -112,6 +130,15 @@ function DisplayTodos () {
 
 		deleteButton.addEventListener('click', (e) => {
 			todos = todos.filter(t => t != todo);
+			Toastify({
+				text: "Todo Deleted",
+				duration: 3000,
+				gravity: "top", 
+				position: "center",
+				style: {
+					background: "linear-gradient(90deg, rgba(255,8,8,1) 0%, rgba(255,179,133,1) 100%)"
+				  }
+				}).showToast();
 			localStorage.setItem('todos', JSON.stringify(todos));
 			DisplayTodos()
 		})
