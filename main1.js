@@ -15,7 +15,8 @@ window.addEventListener('load', () => {
 		e.preventDefault();
 		const contentValue = e.target.elements.content.value;
 		const categoryValue = e.target.elements.category.value;
-		if(!contentValue || !categoryValue){
+		const trimContentValue = contentValue.trim()
+		if(!trimContentValue || !categoryValue){
 		return Toastify({
 				text: "Please enter todo first",
 				duration: 3000,
