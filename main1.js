@@ -10,7 +10,7 @@ window.addEventListener('load', () => {
 	nameInput.addEventListener('change', (e) => {
 		localStorage.setItem('username', e.target.value);
 	})
-
+	
 	newTodoForm.addEventListener('submit', e => {
 		e.preventDefault();
 		const contentValue = e.target.elements.content.value;
@@ -100,6 +100,8 @@ function DisplayTodos () {
 
 		if (todo.done) {
 			todoItem.classList.add('done');
+			edit.style.display = "none"
+
 		}
 		
 		input.addEventListener('change', (e) => {
@@ -108,6 +110,7 @@ function DisplayTodos () {
 
 			if (todo.done) {
 				todoItem.classList.add('done');
+
 			} else {
 				todoItem.classList.remove('done');
 			}
@@ -117,16 +120,20 @@ function DisplayTodos () {
 		})
 
 		edit.addEventListener('click', (e) => {
+			edit.innerText = "save";
 			const input = content.querySelector('input');
 			input.removeAttribute('readonly');
 			input.focus();
 			input.addEventListener('blur', (e) => {
 				input.setAttribute('readonly', true);
 				todo.content = e.target.value;
-				localStorage.setItem('todos', JSON.stringify(todos));
-				DisplayTodos()
-
+				if(todo.content!==""){
+					localStorage.setItem('todos', JSON.stringify(todos));
+					edit.innerText = "edit";
+					DisplayTodos()
+				}
 			})
+
 		})
 
 		deleteButton.addEventListener('click', (e) => {
